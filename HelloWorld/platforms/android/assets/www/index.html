@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+        <link rel="stylesheet" href="jquery.mobile/jquery.mobile-1.4.5.css"/>
+        <link href="http://code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet"/>
+        <title>Hello World</title>
+    </head>
+    <body>
+			<div data-role="page">
+				<div data-role="header">
+					<h1>Lukison Group</h1>
+				</div><!-- /header -->
+			
+				<div role="main" class="ui-content">
+					<select name="propinsi" id="propinsi">
+						<option value="">--Pilih Propinsi--</option>
+							<option value="1">Sumut</option>
+							<option value="2">Banten</option>
+					</select>
+					<select name="kabupaten" id="kabupaten">
+					</select>
+				</div><!-- /content -->
+			
+				<div data-role="footer">
+					<h4>Lukison Group</h4>
+				</div><!-- /footer -->
+			</div><!-- /page -->
+			
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="jquery.mobile/jquery.mobile-1.4.5.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="http://code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
+        <script>
+		$(document).ready(function()
+		{
+			$("#propinsi").change(function()
+			{
+				var propinsi = $("#propinsi").val();
+				$('#kabupaten').html('');
+				$('#kabupaten').append('<option>Samosir</option>');
+			});
+		});
+		</script>
+        
+    </body>
+</html>
