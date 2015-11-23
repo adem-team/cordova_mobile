@@ -34,13 +34,13 @@
     <div class="login-box-body">
       <p class="login-box-msg">Sign in to start your session</p>
 
-      <form action="salesman/index.html" method="post">
+
         <div class="form-group has-feedback">
-          <input type="email" class="form-control" placeholder="Email" required="required">
+          <input type="text" class="form-control" id="username" name="username" placeholder="Email" required="required">
           <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
-          <input type="password" class="form-control" placeholder="Password" required="required">
+          <input type="password" id="password" class="form-control" placeholder="Password" required="required">
           <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
@@ -51,13 +51,12 @@
               </label>
             </div>
           </div>
-          <!-- /.col -->
-          <div class="col-xs-4">
-            <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+         <div class="col-xs-4">
+              <button id="login" type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
           </div>
-          <!-- /.col -->
         </div>
-      </form>
+
+     
 
       <!--
       <div class="social-auth-links text-center">
@@ -79,19 +78,123 @@
 
 <!-- jQuery 2.1.4 -->
 <script src="admin/plugins/jQuery/jQuery-2.1.3.min.js"></script>
-<!-- Bootstrap 3.3.5 -->
 <script src="admin/bootstrap/js/bootstrap.min.js"></script>
-<!-- iCheck -->
 <script src="admin/plugins/iCheck/icheck.min.js"></script>
 <script src="cordova.js"></script>
+
 <script>
-  $(function () {
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
-      increaseArea: '20%' // optional
+
+
+  $("#login").click(function()
+    {
+        var username  = $("#username").val();
+        var password  = $("#password").val();
+        
+        var url = "http://api.lukisongroup.com/login/users?username="+ username;
+        alert(url);
+        $.ajax( 
+          {
+                type:'GET',
+                data:"username=" + username,
+                url:url,
+                dataType:"json",
+                success:function(response) 
+                {
+                  var rusername = response.uservalidation.username;
+                  var rid = response.uservalidation.id;
+                  var rtoken = response.uservalidation.token;
+                  var rstatus = response.uservalidation.status;
+                  var rsite = response.uservalidation.side;
+
+                  if(username != rusername)
+                  {
+                    alert("Username Tidak Ditemukan");
+                  }
+                  else
+                  {
+                    var url ="http://api.lukisongroup.com/login/passwords"
+                    $.ajax(
+                        {
+                            type:'GET',
+                            data:{id:rid,token:rtoken,password:password},
+                            url:url,
+                            dataType:"json",
+                            success:function(response)
+                            {
+                              
+                              var rlogin = response.passwordvalidation.login;
+                              if(rlogin == "true")
+                              {
+
+                                var rruleid = response.passwordvalidation.rule_id;
+                                
+                                alert("Test Login Sukses");
+                                if(rruleid == "1")
+                                {
+                                  alert("Anda Login Sebagai Salesman");
+                                  window.location.href = "cobaangular/index.html#/salesman";
+                                }
+                                if(rruleid == "2")
+                                {
+                                  alert("Anda Login Sebagai Sales_Promotion_Girl");
+                                  window.location.href = "cobaangular/index.html#/spg";
+                                }
+                                if(rruleid == "3")
+                                {
+                                  alert("Anda Login Sebagai Customer");
+                                  window.location.href = "cobaangular/index.html#/salesman/home.html";
+                                }
+                                if(rruleid == "4")
+                                {
+                                  alert("Anda Login Sebagai Distributor");
+                                  window.location.href = "cobaangular/index.html#/salesman/home.html";
+                                }
+                                if(rruleid == "5")
+                                {
+                                  alert("Anda Login Sebagai Factory_Pabrik");
+                                  window.location.href = "cobaangular/index.html#/salesman/home.html";
+                                }
+                                if(rruleid == "6")
+                                {
+                                  alert("Anda Login Sebagai Outsource");
+                                  window.location.href = "cobaangular/index.html#/salesman/home.html";
+                                }
+                              }
+                              else
+                              {
+                                alert("Cek Username Atau Password Anda");
+                              }
+
+       
+                            },
+                            
+                            error: function(e)
+                            {
+                                alert("Call Api Tidak Berhasil");
+                            }
+                        });
+                  }
+                },
+
+                error: function(e)
+                {
+                    alert("Tidak Berhasil");
+                }
+         });
+
     });
-  });
-</script>
+  </script>
+  <script>
+    $(function () {
+      $('input').iCheck({
+        checkboxClass: 'icheckbox_square-blue',
+        radioClass: 'iradio_square-blue',
+        increaseArea: '20%' // optional
+      });
+    });
+  </script>
+
+
+
 </body>
 </html>
