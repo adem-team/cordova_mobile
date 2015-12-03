@@ -1,0 +1,151 @@
+{
+    "SalesItem_Mt": 
+    {
+        "chart": {
+            "caption": "MT Customer",
+            "subcaption": "Daily Actual Total Stock sell-out",
+            "numberPrefix": "",
+            "yaxismaxvalue": "900000",
+            "theme": "ocean"
+        },
+        "data": [
+            {
+                "label": "CASSAVA CRACKER HOT SPICY",
+                "value": "880000"
+            },
+            {
+                "label": "TARO CHIPS ROASTED CORN",
+                "value": "730000"
+            },
+            {
+                "label": "CASSAVA CHIPS BALADO",
+                "value": "590000"
+            },
+            {
+                "label": "TARO CHIPS BLACK PEPPER",
+                "value": "520000"
+            },
+            {
+                "label": "MIXED ROOTS SWEETY HOT",
+                "value": "330000"
+            }
+        ]
+    },
+    "SalesItem_Gt": 
+    {
+        "chart": 
+        {
+            "caption": "GT Customer",
+            "subcaption": "Daily Actual Total Stock sell-out",
+            "subcaptionFontBold": "0",
+            "subcaptionFontSize": "14",
+            "numberPrefix": "",
+            "yaxismaxvalue": "900000",
+            "borderAlpha": "20",
+            "bgColor": "#ffffff",
+            "usePlotGradientColor": "0",
+            "plotBorderAlpha": "10",
+            "showAlternateHGridColor": "0",
+            "showXAxisLine": "1"
+        },
+        "data": 
+        [
+            {
+                "label": "CASSAVA CRACKER HOT SPICY",
+                "value": "88000"
+            },
+            {
+                "label": "TARO CHIPS ROASTED CORN",
+                "value": "730000"
+            },
+            {
+                "label": "CASSAVA CHIPS BALADO",
+                "value": "590000"
+            },
+            {
+                "label": "TARO CHIPS BLACK PEPPER",
+                "value": "520000"
+            },
+            {
+                "label": "MIXED ROOTS SWEETY HOT",
+                "value": "330000"
+            }
+        ]
+    },
+    "SalesItem_Horeca": {
+        "chart": {
+            "caption": "Horeca Customer",
+            "subcaption": "Daily Actual Total Stock sell-out",
+            "numberPrefix": "",
+            "yaxismaxvalue": "900000",
+            "theme": "ocean"
+        },
+        "data": [
+            {
+                "label": "CASSAVA CRACKER HOT SPICY",
+                "value": "880000"
+            },
+            {
+                "label": "TARO CHIPS ROASTED CORN",
+                "value": "730000"
+            },
+            {
+                "label": "CASSAVA CHIPS BALADO",
+                "value": "590000"
+            },
+            {
+                "label": "TARO CHIPS BLACK PEPPER",
+                "value": "520000"
+            },
+            {
+                "label": "MIXED ROOTS SWEETY HOT",
+                "value": "330000"
+            }
+        ]
+    },
+    "SalesItem_Others": {
+        "chart": {
+            "caption": "Others Customer",
+            "subcaption": "Daily Actual Total Stock sell-out",
+            "numberPrefix": "",
+            "yaxismaxvalue": "900000",
+            "theme": "ocean"
+        },
+        "data": [
+            {
+                "label": "CASSAVA CRACKER HOT SPICY",
+                "value": "880000"
+            },
+            {
+                "label": "TARO CHIPS ROASTED CORN",
+                "value": "730000"
+            },
+            {
+                "label": "CASSAVA CHIPS BALADO",
+                "value": "590000"
+            },
+            {
+                "label": "TARO CHIPS BLACK PEPPER",
+                "value": "520000"
+            },
+            {
+                "label": "MIXED ROOTS SWEETY HOT",
+                "value": "330000"
+            }
+        ]
+    },
+    "Sales_Summary": [
+        {
+            "sales_mt": "2.99"
+        },
+        {
+            "sales_gt": "110"
+        },
+        {
+            "sales_horeca": "110"
+        },
+        {
+            "sales_other": "110"
+        }
+    ]
+}

@@ -1,0 +1,154 @@
+{
+    "WhFactoryItem": 
+    {
+        "chart": 
+        {
+            "caption": "Factory Warehouse",
+            "subcaption": "Daily Actual Total Stock Items",
+            "numberPrefix": "",
+            "yaxismaxvalue": "900000",
+            "theme": "ocean"
+        },
+        "data": 
+        [
+            {
+                "label": "CASSAVA CRACKER HOT SPICY",
+                "value": "880000"
+            },
+            {
+                "label": "TARO CHIPS ROASTED CORN",
+                "value": "730000"
+            },
+            {
+                "label": "CASSAVA CHIPS BALADO",
+                "value": "590000"
+            },
+            {
+                "label": "TARO CHIPS BLACK PEPPER",
+                "value": "520000"
+            },
+            {
+                "label": "MIXED ROOTS SWEETY HOT",
+                "value": "330000"
+            }
+        ]
+    },
+    "WhDistributorItem": 
+    {
+        "chart": 
+        {
+            "caption": "Distributor Warehouse",
+            "subcaption": "Daily Actual Total Stock Items",
+            "numberPrefix": "",
+            "yaxismaxvalue": "900000",
+            "theme": "ocean"
+        },
+        "data": 
+        [
+            {
+                "label": "CASSAVA CRACKER HOT SPICY",
+                "value": "19000"
+            },
+            {
+                "label": "TARO CHIPS ROASTED CORN",
+                "value": "73000"
+            },
+            {
+                "label": "CASSAVA CHIPS BALADO",
+                "value": "59000"
+            },
+            {
+                "label": "TARO CHIPS BLACK PEPPER",
+                "value": "52000"
+            },
+            {
+                "label": "MIXED ROOTS SWEETY HOT",
+                "value": "330000"
+            }
+        ]
+    },
+    "WhSubdistItem": 
+    {
+        "chart": 
+        {
+            "caption": "Subdisk Warehouse",
+            "subcaption": "Daily Actual Total Stock Items",
+            "numberPrefix": "",
+            "yaxismaxvalue": "900000",
+            "theme": "ocean"
+        },
+        "data": 
+        [
+            {
+                "label": "CASSAVA CRACKER HOT SPICY",
+                "value": "80000"
+            },
+            {
+                "label": "TARO CHIPS ROASTED CORN",
+                "value": "80000"
+            },
+            {
+                "label": "CASSAVA CHIPS BALADO",
+                "value": "90000"
+            },
+            {
+                "label": "TARO CHIPS BLACK PEPPER",
+                "value": "70000"
+            },
+            {
+                "label": "MIXED ROOTS SWEETY HOT",
+                "value": "50000"
+            }
+        ]
+    },
+    "WhCustomerItem": 
+    {
+        "chart": 
+        {
+            "caption": "Customer Warehouse",
+            "subcaption": "Daily Actual Total Stock Items",
+            "numberPrefix": "",
+            "yaxismaxvalue": "900000",
+            "theme": "ocean"
+        },
+
+        "data": 
+        [
+            {
+                "label": "CASSAVA CRACKER HOT SPICY",
+                "value": "880000"
+            },
+            {
+                "label": "TARO CHIPS ROASTED CORN",
+                "value": "730000"
+            },
+            {
+                "label": "CASSAVA CHIPS BALADO",
+                "value": "590000"
+            },
+            {
+                "label": "TARO CHIPS BLACK PEPPER",
+                "value": "520000"
+            },
+            {
+                "label": "MIXED ROOTS SWEETY HOT",
+                "value": "330000"
+            }
+        ]
+    },
+    "Wh_Summary": 
+    [
+        {
+            "stock_factory": "2.99"
+        },
+        {
+            "stock_distributor": "110"
+        },
+        {
+            "stock_subdist": "110"
+        },
+        {
+            "stock_customer": "110"
+        }
+    ]
+}
