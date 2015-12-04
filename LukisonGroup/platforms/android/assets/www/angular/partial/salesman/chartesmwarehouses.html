@@ -1,13 +1,12 @@
 
 <div class="wrapper">
-  <span data-ng-show="loading" us-spinner spinner-theme="smallRed" ></span>
       <header class="main-header">
         <!-- Logo -->
         <a href="#/salesman" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
-          <span class="logo-mini"><b>A</b>LT</span>
+          <span class="logo-mini"><b>L</b>G</span>
           <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>Admin</b>LTE</span>
+          <span class="logo-lg"><b>Lukison</b>Group</span>
         </a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
@@ -273,12 +272,39 @@
           <!-- sidebar menu: : style can be found in sidebar.less -->
           <ul class="sidebar-menu">
             <li class="header">PT LUKISON GROUP</li>
-            <li>
+            <li class="active">
               <a href="#/salesman">
                 <i class="fa fa-th"></i> <span>HOME</span>
                 <small class="label pull-right bg-green">new</small>
               </a>
             </li>
+            <li class="active treeview">
+              <a href="javascript:;">
+                <i class="fa fa-th"></i>
+                <span>List Elements</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="#/salesman/listbarangumum"><i class="fa fa-circle-o"></i>Barang Umum</a></li>
+                <li><a href="#/salesman/listkategori"><i class="fa fa-circle-o"></i> Kategori</a></li>
+                <li><a href="#/salesman/listtipebarang"><i class="fa fa-circle-o"></i> Tipe Barang</a></li>
+                <li><a href="#/salesman/listsuplier"><i class="fa fa-circle-o"></i> Suplier</a></li>
+              </ul>
+            </li>
+            <li class="active treeview">
+              <a href="javascript:;">
+                <i class="fa fa-th"></i>
+                <span>New Elements</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="#/salesman/new/barangumum"><i class="fa fa-circle-o"></i>New Barang Umum</a></li>
+                <li><a href="#/salesman/new/kategori"><i class="fa fa-circle-o"></i>New Kategori</a></li>
+                <li><a href="#/salesman/new/tipebarang"><i class="fa fa-circle-o"></i>New Tipe Barang</a></li>
+                <li><a href="#/salesman/new/suplier"><i class="fa fa-circle-o"></i>New Suplier</a></li>
+              </ul>
+            </li>
+
             <li>
               <a href="#/salesman/chatting">
                 <i class="fa fa-th"></i> <span>CHATTING</span>
@@ -310,17 +336,7 @@
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-        <!-- Content Header (Page header) -->
-        <section class="content-header">
-          <h1>
-            Dashboard
-            <small>Control panel</small>
-          </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li class="active">Dashboard</li>
-          </ol>
-        </section>
+
 
         <!-- Main content -->
         <section class="content">
@@ -367,10 +383,7 @@
         
       </div><!-- /.content-wrapper -->
       <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-          <b>Version</b> 2.3.0
-        </div>
-        <strong>Copyright &copy; 2014-2015 <a href="http://almsaeedstudio.com">Almsaeed Studio</a>.</strong> All rights reserved.
+        <strong>Copyright &copy;<a href="http://lukisongroup.com">Lukison Group</a>.</strong>
       </footer>
 </div>
 <script src="asset/admin/dist/js/app.min.js"></script>

@@ -23,7 +23,7 @@ myAppModule.config(['$routeProvider', function($routeProvider,$authProvider)
 	});
     $routeProvider.when('/salesman/new/kategori/',
     {
-        templateUrl : 'angular/partial/salesman/editkategori.html',
+        templateUrl : 'angular/partial/salesman/newkategori.html',
         controller  : 'SalesmanController',
         resolve: 
         {
@@ -43,7 +43,7 @@ myAppModule.config(['$routeProvider', function($routeProvider,$authProvider)
     });
     $routeProvider.when('/salesman/new/suplier/',
     {
-        templateUrl : 'angular/partial/salesman/editsuplier.html',
+        templateUrl : 'angular/partial/salesman/newsuplier.html',
         controller  : 'SalesmanController',
         resolve: 
         {
@@ -64,7 +64,7 @@ myAppModule.config(['$routeProvider', function($routeProvider,$authProvider)
 
     $routeProvider.when('/salesman/new/tipebarang/',
     {
-        templateUrl : 'angular/partial/salesman/edittipebarang.html',
+        templateUrl : 'angular/partial/salesman/newtipebarang.html',
         controller  : 'SalesmanController',
         resolve: 
         {

@@ -4,7 +4,7 @@ myAppModule.config(['$routeProvider', function($routeProvider,$authProvider)
 	$routeProvider.when('/salesman/edit/barangumum/:idbarangumum',
 	{
 		templateUrl	: 'angular/partial/salesman/editbarangumum.html',
-		controller 	: 'SalesmanEditController',
+		controller 	: 'EditBarangUmumController',
 		resolve: 
 		{
             auth: function ($q, authService,$location) 
@@ -24,7 +24,7 @@ myAppModule.config(['$routeProvider', function($routeProvider,$authProvider)
     $routeProvider.when('/salesman/edit/kategori/:idkategori',
     {
         templateUrl : 'angular/partial/salesman/editkategori.html',
-        controller  : 'SalesmanEditController',
+        controller  : 'EditKategoriController',
         resolve: 
         {
             auth: function ($q, authService,$location) 
@@ -44,7 +44,7 @@ myAppModule.config(['$routeProvider', function($routeProvider,$authProvider)
     $routeProvider.when('/salesman/edit/suplier/:idsuplier',
     {
         templateUrl : 'angular/partial/salesman/editsuplier.html',
-        controller  : 'SalesmanEditController',
+        controller  : 'EditSuplierController',
         resolve: 
         {
             auth: function ($q, authService,$location) 
@@ -65,7 +65,7 @@ myAppModule.config(['$routeProvider', function($routeProvider,$authProvider)
     $routeProvider.when('/salesman/edit/tipebarang/:idtipebarang',
     {
         templateUrl : 'angular/partial/salesman/edittipebarang.html',
-        controller  : 'SalesmanEditController',
+        controller  : 'EditTipeBarangController',
         resolve: 
         {
             auth: function ($q, authService,$location) 

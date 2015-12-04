@@ -1,5 +1,5 @@
 'use strict';
-myAppModule.controller("SalesmanEditController", ["$scope", "$location","$http", "$routeParams", "authService", "auth", "$window", function ($scope, $location, $http, $routeParams, authService, auth, $window) 
+myAppModule.controller("EditBarangUmumController", ["$scope", "$location","$http", "$routeParams", "authService", "auth", "$window", function ($scope, $location, $http, $routeParams, authService, auth, $window) 
 {
     $scope.loading = true ;
     $scope.userInfo = auth;
@@ -32,7 +32,21 @@ myAppModule.controller("SalesmanEditController", ["$scope", "$location","$http",
     {
             
     });
+    
+    $scope.logout = function () 
+    {
+        
+        $scope.userInfo = null;
+        $window.sessionStorage.clear();
+        window.location.href = "index.html";
 
+    }
+}]);
+
+myAppModule.controller("EditKategoriController", ["$scope", "$location","$http", "$routeParams", "authService", "auth", "$window", function ($scope, $location, $http, $routeParams, authService, auth, $window) 
+{
+    $scope.loading = true ;
+    $scope.userInfo = auth;
     $scope.idkategori = $routeParams.idkategori;
     $http.get('http://api.lukisongroup.com/master/kategoris/'+ $scope.idkategori + '?access-token=azLSTAYr7Y7TLsEAML-LsVq9cAXLyAWa')
     .success(function(data,status, headers, config) 
@@ -51,7 +65,20 @@ myAppModule.controller("SalesmanEditController", ["$scope", "$location","$http",
     {
             
     });
+    $scope.logout = function () 
+    {
+        
+        $scope.userInfo = null;
+        $window.sessionStorage.clear();
+        window.location.href = "index.html";
 
+    }
+}]);
+
+myAppModule.controller("EditTipeBarangController", ["$scope", "$location","$http", "$routeParams", "authService", "auth", "$window", function ($scope, $location, $http, $routeParams, authService, auth, $window) 
+{
+    $scope.loading = true ;
+    $scope.userInfo = auth;
     $scope.idtipebarang = $routeParams.idtipebarang;
     $http.get('http://api.lukisongroup.com/master/tipebarangs/'+ $scope.idtipebarang + '?access-token=azLSTAYr7Y7TLsEAML-LsVq9cAXLyAWa')
     .success(function(data,status, headers, config) 
@@ -70,7 +97,20 @@ myAppModule.controller("SalesmanEditController", ["$scope", "$location","$http",
             
     });
 
+    $scope.logout = function () 
+    {
+        
+        $scope.userInfo = null;
+        $window.sessionStorage.clear();
+        window.location.href = "index.html";
 
+    }
+}]);
+
+myAppModule.controller("EditSuplierController", ["$scope", "$location","$http", "$routeParams", "authService", "auth", "$window", function ($scope, $location, $http, $routeParams, authService, auth, $window) 
+{
+    $scope.loading = true ;
+    $scope.userInfo = auth;
     $scope.idsuplier = $routeParams.idsuplier;
     $http.get('http://api.lukisongroup.com/master/supliers/'+ $scope.idsuplier + '?access-token=azLSTAYr7Y7TLsEAML-LsVq9cAXLyAWa')
     .success(function(data,status, headers, config) 
