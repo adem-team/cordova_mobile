@@ -1,0 +1,171 @@
+<span data-ng-show="loading" us-spinner="{radius:30, width:8, length: 16}"></span>
+  <header class="main-header">
+  <!-- Logo -->
+  <a href="#/erp" class="logo bg-red">
+    <img src="http://lukisongroup.com/favicon.ico" width="30" alt="">
+    <!-- mini logo for sidebar mini 50x50 pixels -->
+    <span class="logo-mini"><b>L</b>G</span>
+    <!-- logo for regular state and mobile devices -->
+    Lukison Group
+  </a>
+  <!-- Header Navbar: style can be found in header.less -->
+  <nav class="navbar navbar-static-top" role="navigation">
+    <!-- Sidebar toggle button-->
+    <a href="javascript:;" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+      <span class="sr-only">Toggle navigation</span>
+    </a>
+    <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+        <li class="dropdown user user-menu">
+          <a href="javascipt:;" class="dropdown-toggle" data-toggle="dropdown">
+            <img src="asset/admin/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+            <span class="hidden-xs">Admin: {{userInfo.username}}</span>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="user-header">
+              <img src="asset/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+              <p>
+                {{userInfo.username}} - Web Developer
+                <small>Member since Nov. 2012</small>
+              </p>
+            </li>
+            <!-- Menu Body -->
+            <li class="user-body">
+              <div class="col-xs-4 text-center">
+                <a href="#">Followers</a>
+              </div>
+              <div class="col-xs-4 text-center">
+                <a href="#">Sales</a>
+              </div>
+              <div class="col-xs-4 text-center">
+                <a href="#">Friends</a>
+              </div>
+            </li>
+            <!-- Menu Footer-->
+            <li class="user-footer">
+              <div class="pull-left">
+                <a href="#" class="btn btn-default btn-flat">Profile</a>
+              </div>
+              <div class="pull-right">
+                <a ng-click="logout()" class="btn btn-default btn-flat">Sign out</a>
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  </header>
+  <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+  <!-- sidebar: style can be found in sidebar.less -->
+  <section class="sidebar">
+    <!-- Sidebar user panel -->
+    <div class="user-panel">
+      <div class="pull-left image">
+        <img src="asset/admin/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+      </div>
+      <div class="pull-left info">
+        <p>{{userInfo.username}}</p>
+        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+      </div>
+    </div>
+    <!-- search form -->
+    <form action="#" method="get" class="sidebar-form">
+      <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Search...">
+        <span class="input-group-btn">
+          <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+        </span>
+      </div>
+    </form>
+    <!-- /.search form -->
+    <!-- sidebar menu: : style can be found in sidebar.less -->
+    <ul class="sidebar-menu">
+      <li class="header bg-red"><h4>PT. Lukison Group</h4></li>
+      <li class="active">
+        <a href="#/erp">
+          <i class="fa fa-th"></i> <span>HOME</span>
+          <small class="label pull-right bg-green">new</small>
+        </a>
+      </li>
+      <li class="active treeview">
+        <a href="javascript:;">
+          <i class="fa fa-th"></i>
+          <span>Product Master</span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="#/erp/masterbarang/list/barangumum">
+            <i class="fa fa-circle-o"></i>Barang Umum</a>
+          </li>
+          <li><a href="#/erp/masterbarang/list/kategori">
+            <i class="fa fa-circle-o"></i> Kategori</a>
+          </li>
+          <li><a href="#/erp/masterbarang/list/tipebarang">
+            <i class="fa fa-circle-o"></i> Tipe Barang</a>
+          </li>
+          <li><a href="#/erp/masterbarang/list/suplier">
+            <i class="fa fa-circle-o"></i> Suplier</a></li>
+          <li><a href="#/erp/masterbarang/list/barangunit">
+            <i class="fa fa-circle-o"></i>List Barang Unit</a>
+          </li>
+        </ul>
+      </li>
+      <li class="active treeview">
+        <a href="javascript:;">
+          <i class="fa fa-th"></i>
+          <span>Chart Elements</span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="#/erp/chart/esm/sales">
+            <i class="fa fa-circle-o"></i>Chart Sales</a>
+          </li>
+          <li><a href="#/erp/chart/esm/warehouses">
+            <i class="fa fa-circle-o"></i>Chart Warehouses</a>
+          </li>
+          <li><a href="#/erp/chart/hrm/personalia">
+            <i class="fa fa-circle-o"></i>Chart Personalia</a>
+          </li>
+          <li><a href="#/erp/chart/hrm/employeturnover">
+            <i class="fa fa-circle-o"></i>Chart Turn Over</a>
+          </li>
+        </ul>
+      </li>
+      <li class="active treeview">
+        <a href="javascript:;">
+          <i class="fa fa-th"></i>
+          <span>List Order Elements</span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="#/erp/order/list/requestorder">
+            <i class="fa fa-circle-o"></i>List Request Order</a>
+          </li>
+          <li><a href="#/erp/order/list/salesorder">
+            <i class="fa fa-circle-o"></i>List Sales Order</a>
+          </li>
+          <li><a href="#/erp/order/list/purchaseorder">
+            <i class="fa fa-circle-o"></i>List Purchase Order</a>
+          </li>
+        </ul>
+      </li>
+
+      <li class="active treeview">
+        <a href="javascript:;">
+          <i class="fa fa-th"></i>
+          <span>Widget Elements</span>
+        </a>
+        <ul class="treeview-menu">
+          <li><a href="#/erp/widget/list/beritaacara">
+            <i class="fa fa-circle-o"></i>Berita Acara</a>
+          </li>
+          <li><a href="#/erp/widget/list/memo">
+            <i class="fa fa-circle-o"></i>Memo</a>
+          </li>
+          <li><a href="#/erp/widget/list/notulen">
+            <i class="fa fa-circle-o"></i>Notulen</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  </aside>

@@ -1,0 +1,69 @@
+<div ng-include="'angular/partial/headtemplate.html'"></div>
+
+<div class="content-wrapper">
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+      <!-- for flashMessage in app.session.flashbag.get('notice') -->
+        <div class="alert alert-success alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">    &times;
+          </button>
+          <h4>SALESMAN EDIT KATEGORI</h4>
+        </div>
+      <!-- endfor flashMessage -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="box box-danger">
+          <div class="box-header">
+            <h3 class="box-title">EDIT KATEGORI</h3>
+          </div>
+          <form action="index.html" method="post">
+          <div class="box-body">
+            <div class="form-group">
+              <label>KODE KATEGORI</label>
+                <input type="text" class="form-control" ng-model="ekkdkategori" disabled>
+            </div>
+            <div class="form-group">
+              <label>NAMA KATEGORI</label>
+                <input type="text" class="form-control" ng-model="eknamakategori">
+            </div>
+            <div class="form-group">
+              <label>NOTE</label>
+                <textarea class="form-control" ng-model="eknote"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label>Status</label>
+              <div class="radio" >
+                <label>
+                  <input type="radio" class="flat-red" ng-model="ekstatus"  value="1">
+                  Aktif
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" class="flat-red" ng-model="ekstatus"  value="0">Tidak Aktif
+                </label>
+              </div> 
+            </div>
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer clearfix">
+            <a href="javascript::;" class="btn btn-sm btn-danger btn-flat pull-left">Cancel</a>
+            <button type="submit" class="btn btn-sm btn-success btn-flat pull-right">Submit</button>
+          </div>
+        </div>
+      </form>
+        <!-- /.box -->
+      </div>
+      <!-- /.col (left) -->
+    </div>
+
+  </section><!-- /.content -->
+  
+</div><!-- /.content-wrapper -->
+
+<div ng-include="'angular/partial/foottemplate.html'"></div>

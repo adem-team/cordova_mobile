@@ -1,0 +1,21 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.lukison.app"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.lukison.app"
+        },
+        "phonegap-plugin-barcodescanner": {
+            "PACKAGE_NAME": "com.lukison.app"
+        }
+    },
+    "dependent_plugins": {}
+}

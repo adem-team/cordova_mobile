@@ -1,0 +1,117 @@
+<div ng-include="'angular/partial/headtemplate.html'"></div>
+
+<div class="content-wrapper">
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+      <!-- for flashMessage in app.session.flashbag.get('notice') -->
+        <div class="alert alert-success alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">    &times;
+          </button>
+          <h4>SALESMAN EDIT BARANG UMUM</h4>
+        </div>
+      <!-- endfor flashMessage -->
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="box box-danger">
+          <div class="box-header">
+            <h3 class="box-title">DETAIL BARANG UMUM</h3>
+          </div>
+          <div class="box-body table-responsive">
+            <table class="table table-hovered table-striped table-bordered">
+              <thead>
+                <th>KD BRG UMUM</th>
+                <th>NM BRG UMUM</th>
+                <th>TYPE</th>
+                <th>KATEGORI</th>
+                <th>HPP</th>
+                <th>HARGA</th>
+                <th>STATUS</th>
+                <th>NOTE</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ebukdbarang}}</td>
+                  <td>{{ebunmbarang}}</td>
+                  <td>{{ebutypebarang}}</td>
+                  <td>{{ebukdkategori}}</td>
+                  <td>{{ebuhpp|number}}</td>
+                  <td>{{ebuharga|number}}</td>
+                  <td ng-if='ebustatus === 1' >AKTIF </td>
+                  <td ng-if='ebustatus === 0' >TIDAK AKTIF </td>
+                  <td>{{ebunote}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="box-body table-responsive">
+            <table class="table table-hovered table-striped table-bordered">
+              <thead>
+                <th>KD BRG UMUM</th>
+                <th>NM BRG UMUM</th>
+                <th>TYPE</th>
+                <th>KATEGORI</th>
+                <th>HPP</th>
+                <th>HARGA</th>
+                <th>STATUS</th>
+                <th>NOTE</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ebukdbarang}}</td>
+                  <td>{{ebunmbarang}}</td>
+                  <td>{{ebutypebarang}}</td>
+                  <td>{{ebukdkategori}}</td>
+                  <td>{{ebuhpp|number}}</td>
+                  <td>{{ebuharga|number}}</td>
+                  <td ng-if='ebustatus === 1' >AKTIF </td>
+                  <td ng-if='ebustatus === 0' >TIDAK AKTIF </td>
+                  <td>{{ebunote}}</td>
+                </tr>
+                <tr>
+                  <td>{{ebukdbarang}}</td>
+                  <td>{{ebunmbarang}}</td>
+                  <td>{{ebutypebarang}}</td>
+                  <td>{{ebukdkategori}}</td>
+                  <td>{{ebuhpp|number}}</td>
+                  <td>{{ebuharga|number}}</td>
+                  <td ng-if='ebustatus === 1' >AKTIF </td>
+                  <td ng-if='ebustatus === 0' >TIDAK AKTIF </td>
+                  <td>{{ebunote}}</td>
+                </tr>
+                <tr>
+                  <td>{{ebukdbarang}}</td>
+                  <td>{{ebunmbarang}}</td>
+                  <td>{{ebutypebarang}}</td>
+                  <td>{{ebukdkategori}}</td>
+                  <td>{{ebuhpp|number}}</td>
+                  <td>{{ebuharga|number}}</td>
+                  <td ng-if='ebustatus === 1' >AKTIF </td>
+                  <td ng-if='ebustatus === 0' >TIDAK AKTIF </td>
+                  <td>{{ebunote}}</td>
+                </tr>
+                <tr>
+                  <td>{{ebukdbarang}}</td>
+                  <td>{{ebunmbarang}}</td>
+                  <td>{{ebutypebarang}}</td>
+                  <td>{{ebukdkategori}}</td>
+                  <td>{{ebuhpp|number}}</td>
+                  <td>{{ebuharga|number}}</td>
+                  <td ng-if='ebustatus === 1' >AKTIF </td>
+                  <td ng-if='ebustatus === 0' >TIDAK AKTIF </td>
+                  <td>{{ebunote}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+      </div>
+      <!-- /.col (left) -->
+    </div>
+  </section><!-- /.content -->
+</div><!-- /.cont -->
+
+<div ng-include="'angular/partial/foottemplate.html'"></div>

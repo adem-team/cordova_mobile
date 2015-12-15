@@ -1,0 +1,55 @@
+<div ng-include="'angular/partial/headtemplate.html'"></div>
+<div class="content-wrapper">
+  <section class="content">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="box box-danger">
+          <div class="box-header">
+            <h3 class="box-title">Create New Request Order</h3>
+          </div>
+          <form ng-submit="" method="post" validate>
+          <div class="box-body">
+            <div class="form-group">
+              <label>KODE KATEGROI</label>
+                <input type="text" class="form-control" ng-model="" required>
+              </select>
+            </div><!-- /.form-group -->
+            <!-- /.form group -->
+            <div class="form-group">
+              <label>KODE BARANG</label>
+              <select class="form-control select2" style="width: 100%;" ng-model="" required>
+                <option selected="selected" value="">--Pilih Kode Barang--</option>
+                <option ng-repeat="" value=""></option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>SATUAN BARANG</label>
+              <select class="form-control select2" style="width: 100%;" ng-model="barangumum.kategori"required>
+                <option selected="selected" value="">--Pilih Satuan Barang--</option>
+                <option ng-repeat="category in categories" value=""></option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>REQUEST QUANTITY</label>
+              <input type="number" class="form-control" ng-model="" min="0" required>
+            </div>
+
+            <div class="form-group">
+              <label>NOTE/INFORMASI</label>
+              <textarea  class="form-control" ng-model="" min=0 required></textarea>
+            </div>
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer clearfix">
+            <a href="javascript::;" class="btn btn-sm btn-danger btn-flat pull-left">Cancel</a>
+            <button type="submit" class="btn btn-sm btn-success btn-flat pull-right">Submit</button>
+          </div>
+        </div>
+      </form>
+      </div>
+    </div>
+  </section> 
+</div>
+<div ng-include="'angular/partial/foottemplate.html'"></div>

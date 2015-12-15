@@ -1,0 +1,42 @@
+<div ng-include="'angular/partial/headtemplate.html'"></div>
+
+<div class="content-wrapper">
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+      <!-- for flashMessage in app.session.flashbag.get('notice') -->
+        <div class="alert alert-success alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">    &times;
+          </button>
+          <h4>WAREHOUSE CHART</h4>
+        </div>
+      <!-- endfor flashMessage -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <fusioncharts width= 100% type="bar2d" datasource="{{fi}}">
+        </fusioncharts> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <fusioncharts width= 100% type="bar2d" datasource="{{di}}">
+        </fusioncharts> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <fusioncharts width= 100% type="bar2d" datasource="{{si}}">
+        </fusioncharts> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <fusioncharts width= 100% type="bar2d" datasource="{{ci}}">
+        </fusioncharts> 
+      </div>
+    </div>
+  </section><!-- /.content -->
+</div><!-- /.content-wrapper -->
+<div ng-include="'angular/partial/foottemplate.html'"></div>

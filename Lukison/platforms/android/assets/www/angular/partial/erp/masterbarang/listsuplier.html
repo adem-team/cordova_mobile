@@ -1,0 +1,68 @@
+<div ng-include="'angular/partial/headtemplate.html'"></div>
+
+<div class="content-wrapper">
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-danger">
+          <div class="panel-heading">List Suplier</div>
+          <div class="panel-body">
+            <a class="btn btn-warning" href="#/erp/masterbarang/new/suplier">
+                <i class="fa fa-plus"></i> Add Suplier 
+            </a>
+          </div>
+          <div class="panel-body table-responsive">
+             <table class="table table-hover table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <!-- <th>KD SUPLIER</th> -->
+                  <th>NM SUPLIER</th>
+                  <th>ALAMAT</th>
+                  <th>KOTA</th>
+                  <th>TELP</th>
+                  <th>MOBILE</th>
+                  <th>FAX</th>
+                  <th>EMAIL</th>
+                  <th>WEBSITE</th>
+                  <th>DETAIL</th>
+                  <th>EDIT</th>
+                  <th>DELETE</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="suplier in supliers">
+                  <td>{{suplier.ID}}</td>
+                  <!-- <td>{{suplier.KD_SUPPLIER}}</td> -->
+                  <td>{{suplier.NM_SUPPLIER}}</td>
+                  <td>{{suplier.ALAMAT}}</td>
+                  <td>{{suplier.KOTA}}</td>
+                  <td>{{suplier.TLP}}</td>
+                  <td>{{suplier.MOBILE}}</td>
+                  <td>{{suplier.FAX}}</td>
+                  <td>{{suplier.EMAIL}}</td>
+                  <td>{{suplier.WEBSITE}}</td>
+                  <td><a href="#/erp/masterbarang/detail/suplier/{{suplier.ID}}">
+                    <i class="fa fa-eye fa-2x"></i></a>
+                  </td>
+                  <td><a href="#/erp/masterbarang/edit/suplier/{{suplier.ID}}">
+                    <i class="fa fa-refresh fa-2x"></i></a>
+                  </td>
+                  <td>
+                    <a href="" ng-click="deletesuplier(suplier)">
+                      <i class="fa fa-trash-o fa-2x"></i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+             </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- /.content -->
+  
+</div><!-- /.content-wrapper -->
+
+<div ng-include="'angular/partial/foottemplate.html'"></div>

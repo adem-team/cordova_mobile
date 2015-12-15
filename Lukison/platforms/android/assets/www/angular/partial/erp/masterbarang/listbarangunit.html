@@ -1,0 +1,63 @@
+<div ng-include="'angular/partial/headtemplate.html'"></div>
+<div class="content-wrapper">
+<section class="content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel panel-danger">
+        <div class="panel-heading">List Barang Unit</div>
+        <div class="panel-body">
+            <a class="btn btn-warning" href="#/erp/masterbarang/new/barangunit">
+                <i class="fa fa-plus"></i> Add Unit Barang 
+            </a>
+        </div>
+        <div class="panel-body table-responsive">
+           <table class="table table-hover table-striped table-bordered">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <!-- <th>KD UNIT</th> -->
+                <th>NM UNIT</th>
+                <th>QUANTITY</th>
+                <th>WEIGHT</th>
+                <th>COLOR</th>
+                <th>NOTE</th>
+                <th>STATUS</th>
+                <th>DETAIL</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="unitbarang in unitbarangs">
+                <td>{{unitbarang.ID}}</td>
+                <!-- <td>{{unitbarang.KD_UNIT}}</td> -->
+                <td>{{unitbarang.NM_UNIT}}</td>
+                <td>{{unitbarang.QTY}}</td>
+                <td>{{unitbarang.WEIGHT}}</td>
+                <td>{{unitbarang.COLOR}}</td>
+                <td>{{unitbarang.NOTE}}</td>
+                <td ng-if='unitbarang.STATUS === 1' >AKTIF </td>
+                <td ng-if='unitbarang.STATUS === 0' >TIDAK AKTIF </td>
+                <td><a href="#/erp/masterbarang/detail/barangunit/{{unitbarang.ID}}">
+                  <i class="fa fa-eye fa-2x"></i></a>
+                </td>
+                <td><a href="#/erp/masterbarang/edit/barangunit/{{unitbarang.ID}}">
+                  <i class="fa fa-refresh fa-2x"></i></a>
+                </td>
+                <td>
+                  <a href="" ng-click="deletebarangunit(unitbarang)">
+                    <i class="fa fa-trash-o fa-2x"></i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+           </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><!-- /.content -->
+</div>
+<div ng-include="'angular/partial/foottemplate.html'"></div>
+

@@ -1,0 +1,43 @@
+<div ng-include="'angular/partial/headtemplate.html'"></div>
+
+<div class="content-wrapper">
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+      <!-- for flashMessage in app.session.flashbag.get('notice') -->
+        <div class="alert alert-success alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">    &times;
+          </button>
+          <h4>HRM PERSONALIA 3D</h4>
+        </div>
+      <!-- endfor flashMessage -->
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <fusioncharts
+          width= 100%,
+          type="msline",
+          chart='{{support_attrs}}',
+          categories='{{support_catg}}',
+          dataset='{{support_dataset}}'
+        >
+        </fusioncharts>   
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <fusioncharts
+          width= 100%
+          type="msline"
+          chart="{{bisnis_attrs}}"
+          categories="{{bisnis_catg}}"
+          dataset="{{bisnis_dataset}}"
+        >
+        </fusioncharts>   
+      </div>
+    </div>
+  </section><!-- /.content -->
+</div><!-- /.content-wrapper -->
+
+<div ng-include="'angular/partial/foottemplate.html'"></div>

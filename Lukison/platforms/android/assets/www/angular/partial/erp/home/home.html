@@ -1,0 +1,144 @@
+<div ng-include="'angular/partial/headtemplate.html'"></div>
+<div class="content-wrapper">
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-dm-12  col-lg-12">
+          <div class="panel panel-danger">
+            <div class="panel-heading"><div>Employee Dashboard</div></div>
+            <div class="panel-body">    
+              <div class="col-xs-12 col-sm-3 col-dm-2 col-lg-2" style="valign:bottom; margin-left:0 ; text-align: center">
+                <img src="http://lukisongroup.com/upload/hrd/Employee/default.jpg" class="img-thumbnail" alt="Cinque Terre" width="100px" height="100px">
+              </div>
+  
+              <div class="col-xs-12 col-sm-5 col-dm-3 col-lg-3" style="margin-left:0 ;padding-left: 0; padding-top:0px; margin-bottom: 20px">
+
+                <table id="table1" style="display:block;padding-left: 0; color: darkred">
+                  <tbody>
+                    <tr>
+                      <td colspan="3" width="auto" valign="top" style="color: #000000">
+                        <b>LG.2015.000000</b>  
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" width="auto" valign="top" style="color:red"><b>Lukison Group</b>  </td>
+                    </tr>
+                    <tr>
+                      <td width="auto" valign="top">Job Title</td>
+                      <td valign="top" style="padding-left: 2px"><b> :</b> </td>
+                      <td width="auto" style="padding-left: 2px">Manager</td>
+                    </tr>
+                    <tr>
+                      <td width="auto" valign="top">Job Level</td>
+                      <td valign="top" style="padding-left: 2px"><b> :</b> </td>
+                      <td width="auto" style="padding-left: 2px">JO - Junior Officer</td>
+                    </tr>
+                    <tr>
+                      <td width="auto" valign="top">Organization</td>
+                      <td valign="top" style="padding-left: 2px"><b> :</b> </td>
+                      <td width="auto" style="padding-left: 2px">Information Technologi</td>
+                    </tr>
+                    <tr>
+                      <td width="auto" valign="top">Org Lavel</td>
+                      <td valign="top" style="padding-left: 2px"><b> :</b> </td>
+                      <td width="auto" style="padding-left: 2px">ITS-00 - IT</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+              </div>
+              <div class=" col-xs-12 col-sm-4 col-dm-3 col-lg-3" style="padding-left:0">
+                <table id="table1" style="display:block;; color: darkred">
+                   <tbody><tr>
+                       <td width="auto" valign="top">Company  </td>
+                       <td valign="top" style="padding-left: 2px"><b> :</b> </td>
+                       <td width="auto" style="padding-left: 2px">Lukison Group</td>
+                   </tr>
+                   <tr>
+                       <td width="auto" valign="top">Location  </td>
+                       <td valign="top" style="padding-left: 2px"><b> :</b> </td>
+                       <td width="auto" style="padding-left: 2px">Demension c12</td>
+                   </tr>
+                   <tr>
+                       <td width="auto" valign="top">Join Date</td>
+                       <td valign="top" style="padding-left: 2px"><b> :</b> </td>
+                       <td width="auto" style="padding-left: 2px">2015-08-01</td>
+                   </tr>
+                   <tr>
+                       <td width="auto" valign="top">Emp. Status</td>
+                       <td valign="top" style="padding-left: 2px"><b> :</b> </td>
+                       <td width="auto" style="padding-left: 2px">Kontrak</td>
+                   </tr>
+                   <tr>
+                       <td width="auto" valign="top">e-Mail</td>
+                       <td valign="top" style="padding-left: 2px"><b> :</b> </td>
+                       <td width="auto" style="padding-left: 2px"></td>
+                   </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class=" col-xs-12 col-sm-4 col-dm-3 col-lg-3"  style="padding-left:0"  >
+              <div data-ng-app="monospaced.qrcode" data-ng-init="foo='LG.2015.000000';bar='http://localhost/angular-qrcode-master/dist/angular-qrcode';v=4;e='M';s=100;"> 
+                <qrcode version="{{v}}" error-correction-level="{{e}}" size="{{s}}" data="{{foo}}">
+                </qrcode>
+              </div>
+            </div>
+          </div>
+        </div>      
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-dm-4  col-lg-4">
+          <div class="panel panel-danger">
+            <div class="panel-heading"><b>WIDGET</b></div>
+            <div class="list-group">
+              <a class="list-group-item" href="#/erp/widget/list/beritaacara">
+                <span class="badge">14</span>Berita Acara 
+              </a>
+              <a class="list-group-item" href="#/widget/chat"><span class="badge">14</span>Chating </a>
+              <a class="list-group-item" href="#/erp/widget/list/memo">
+                <span class="badge">2</span>Memo
+              </a>
+              <a class="list-group-item" href="#/erp/widget/list/notulen"><span class="badge">2</span>Notulen</a>
+              <a class="list-group-item" href="#/email/mail-box"><span class="badge">2</span>email</a>
+              <a class="list-group-item" href="#/sistem/user-profile">Profile</a>
+            </div>
+          </div>      
+        </div>
+        <div class="col-xs-12 col-sm-6 col-dm-4  col-lg-4">
+          <div class="panel panel-danger">
+            <div class="panel-heading"><b>TASK MANAGE </b></div>
+            <div class="list-group">
+              <a class="list-group-item" href="#/widget/pilotproject"><span class="badge">2</span>Pilot Project</a>
+              <a class="list-group-item" href="#/widget/jobsdaily"><span class="badge">14</span>Daily Jobs</a>
+              <a class="list-group-item" href="#/widget/headjob"><span class="badge">14</span>Head Jobs </a>
+              <a class="list-group-item" href="#/widget/addjob"><span class="badge">2</span>Additional Jobs</a>
+              <a class="list-group-item" href="#/widget/arsip"><span class="badge">2</span>Arsip File</a>
+              <a class="list-group-item" href="#/widget/docdba"><span class="badge">2</span>Documentation</a>
+            </div>
+          </div>      
+        </div>
+        <div class="col-xs-12 col-sm-6 col-dm-4  col-lg-4">
+          <div class="panel panel-danger">
+            <div class="panel-heading"><b>REQUEST AND APPROVAL</b></div>
+            <div class="list-group">
+              <a class="list-group-item" href="#/hrd/administrasi">Administration </a>
+              <a class="list-group-item" href="#/erp/order/list/requestorder">
+                <span class="badge">1</span>Request Order
+              </a>
+              <a class="list-group-item" href="#/erp/order/list/salesorder">
+                <span class="badge">14</span>Sales Order
+              </a>
+              <a class="list-group-item" href="#/erp/order/list/purchaseorder">
+                <span class="badge">2</span>Purchase Order
+              </a>
+              <a class="list-group-item" href="#/widget/inv"><span class="badge">2</span>Reimburse</a>
+              <a class="list-group-item" href="#/widget/sj"><span class="badge">2</span>SPJD</a>
+            </div>
+          </div>        
+        </div>
+      </div>
+  </section><!-- /.content -->
+</div><!-- /.content-wrapper -->
+<div ng-include="'angular/partial/foottemplate.html'"></div>
+ 

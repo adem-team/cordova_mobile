@@ -1,0 +1,65 @@
+<div ng-include="'angular/partial/headtemplate.html'"></div>
+
+<div class="content-wrapper">
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+      <!-- for flashMessage in app.session.flashbag.get('notice') -->
+        <div class="alert alert-success alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">    &times;
+          </button>
+          <h4>SALESMAN NEW KATEGORI</h4>
+        </div>
+      <!-- endfor flashMessage -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="box box-danger">
+          <div class="box-header">
+            <h3 class="box-title">CREATE NEW KATEGORI</h3>
+          </div>
+          <form name="kategoriForm" ng-submit="submitForm(kategoriForm.$valid)" novalidate>
+          <div class="box-body">
+            <div class="form-group" ng-class="{ 'has-error' : kategoriForm.namakategori.$invalid && !kategoriForm.namakategori.$pristine }">
+                <label>Name Kategori</label>
+                <input type="text" name="namakategori" class="form-control" ng-model="kategori.namakategori" required>
+                <p ng-show="kategoriForm.namakategori.$invalid && !kategoriForm.namakategori.$pristine" class="help-block">Nama Kategori Tidak Boleh Kosong.</p>
+            </div>
+            
+            <!-- USERNAME -->
+            <div class="form-group" ng-class="{ 'has-error' : kategoriForm.catatan.$invalid && !kategoriForm.catatan.$pristine }">
+                <label>Catatan Kategori</label>
+                <textarea name="catatan" class="form-control" ng-model="kategori.catatan" required>
+                </textarea>
+                <p ng-show="kategoriForm.catatan.$invalid && !kategoriForm.catatan.$pristine" class="help-block">Catatan Untuk Kategori Barang Tidak Boleh Kosong</p>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : kategoriForm.statuskategori.$invalid && !kategoriForm.statuskategori.$pristine }">
+              <label>Status Kategori</label>
+              <div class="radio">
+                <label>
+                  <input type="radio" ng-model="statuskategori" name="statuskategori" id="optionsRadios1" value="aktif" required>
+                  Aktif
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" ng-model="statuskategori" name="statuskategori" id="optionsRadios2" value="tidak aktif" required>
+                  Tidak Aktif
+                </label>
+              </div>
+            </div>
+            <button type="submit" ng-disabled="kategoriForm.$invalid" class="btn btn-primary">Submit</button>
+          </div>  
+          </form>
+        <!-- /.box -->
+        </div>
+      </div>
+    </div>
+
+  </section><!-- /.content -->
+  
+</div><!-- /.content-wrapper -->
+
+<div ng-include="'angular/partial/foottemplate.html'"></div>

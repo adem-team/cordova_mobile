@@ -1,0 +1,55 @@
+<div ng-include="'angular/partial/headtemplate.html'"></div>
+
+<div class="content-wrapper">
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="panel panel-danger">
+          <div class="panel-heading">List Tipe Barang</div>
+          <div class="panel-body">
+            <a class="btn btn-warning" href="#/erp/masterbarang/new/tipebarang">
+                <i class="fa fa-plus"></i> Add Tipe Barang 
+            </a>
+          </div>
+          <div class="panel-body table-responsive">
+             <table class="table table-hover table-striped table-bordered">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <!-- <th>KD TYPE</th> -->
+                  <th>NM TYPE</th>
+                  <th>NOTE</th>
+                  <th>STATUS</th>
+                  <th>DETAIL</th>
+                  <th>EDIT</th>
+                  <th>DELETE</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="typebarang in typebarangs">
+                  <td>{{typebarang.ID}}</td>
+                  <!-- <td>{{typebarang.KD_TYPE}}</td> -->
+                  <td>{{typebarang.NM_TYPE}}</td>
+                  <td>{{typebarang.NOTE}}</td>
+                  <td ng-if='typebarang.STATUS === 1'>AKTIF</td>
+                  <td ng-if='typebarang.STATUS === 0'>TIDAK AKTIF</td>
+                  <td><a href="#/erp/masterbarang/detail/tipebarang/{{typebarang.ID}}">
+                    <i class="fa fa-eye fa-2x"></i></a>
+                  </td>
+                  <td><a href="#/erp/masterbarang/edit/tipebarang/{{typebarang.ID}}">
+                    <i class="fa fa-refresh fa-2x"></i></a>
+                  </td>
+                  <td><a href="" ng-click="deletetipebarang(typebarang)"><i class="fa fa-trash-o fa-2x"></i></a></td>
+                </tr>
+              </tbody>
+             </table>
+           </div>
+        </div>
+      </div>
+    </div>
+  </section><!-- /.content -->
+  
+</div><!-- /.content-wrapper -->
+
+<div ng-include="'angular/partial/foottemplate.html'"></div>

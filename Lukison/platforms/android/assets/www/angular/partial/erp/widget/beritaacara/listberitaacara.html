@@ -1,0 +1,58 @@
+<div ng-include="'angular/partial/headtemplate.html'"></div>
+<div class="content-wrapper">
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-danger">
+            <div class="panel-heading">
+                List Berita Acara 
+            </div>
+            <div class="panel-body">
+                <a class="btn btn-warning" href="#/erp/widget/new/beritaacara">
+                    New Berita Acara <i class="fa fa-plus"></i>
+                </a>
+            </div>
+            <div class="panel-body table-responsive">
+               <table class="table table-hovered table-striped table-bordered">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>KODE BERITA ACARA</th>
+                    <th>JUDUL</th>
+                    <th>ISI BERITA ACARA</th>
+                    <th>KODE CORP</th>
+                    <th>DETAIL</th>
+                    <th>EDIT</th>
+                    <th>DELETE</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>BA.00.01.00.1</td>
+                    <td>JUDUL BERITA ACARA SATU</td>
+                    <td>INI ADALAH ISI DARI JUDUL BERITA ACARA SATU</td>
+                    <td>LG</td>   
+                    <td><a href="#/erp/widget/detail/beritaacara/1">
+                      <i class="fa fa-eye fa-2x"></i></a>
+                    </td>
+                    <td><a href="#/erp/widget/edit/beritaacara/1">
+                      <i class="fa fa-refresh fa-2x"></i></a>
+                    </td>
+                    <td>
+                        <a href="" ng-click="deletebarangumum(barangumum)">
+                            <i class="fa fa-trash-o fa-2x"></i>
+                        </a>
+                    </td>
+                  </tr>
+                </tbody>
+               </table>
+             </div>
+           </div>
+
+        </div>
+      </div>
+    </section><!-- /.content -->
+</div><!-- /.content-wrapper -->
+
+<div ng-include="'angular/partial/foottemplate.html'"></div>

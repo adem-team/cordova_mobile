@@ -1,0 +1,64 @@
+<div ng-include="'angular/partial/headtemplate.html'"></div>
+
+<div class="content-wrapper">
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+      <!-- for flashMessage in app.session.flashbag.get('notice') -->
+        <div class="alert alert-success alert-dismissable">
+          <button type="button" class="close" data-dismiss="alert" aria-hidden="true">    &times;
+          </button>
+          <h4>SALESMAN NEW TIPE BARANG</h4>
+        </div>
+      <!-- endfor flashMessage -->
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="box box-danger">
+          <div class="box-header">
+            <h3 class="box-title">CREATE NEW TIPE BARANG</h3>
+          </div>
+          <form name="tipebarangForm" ng-submit="submitForm(tipebarangForm.$valid)" novalidate>
+          <div class="box-body">
+            <div class="form-group" ng-class="{ 'has-error' : tipebarangForm.namatipe.$invalid && !tipebarangForm.namatipe.$pristine }">
+                <label>Name Tipe Barang</label>
+                <input type="text" name="namatipe" class="form-control" ng-model="tipebarang.namatipe" required>
+                
+            </div>
+            
+            <!-- USERNAME -->
+            <div class="form-group" ng-class="{ 'has-error' : tipebarangForm.catatan.$invalid && !tipebarangForm.catatan.$pristine }">
+                <label>Catatan Tipe Barang</label>
+                <textarea name="catatan" class="form-control" ng-model="tipebarang.catatan" required>
+                </textarea>
+                <p ng-show="tipebarangForm.catatan.$invalid && !tipebarangForm.catatan.$pristine" class="help-block">Catatan Untuk Tipe Barang Tidak Boleh Kosong</p>
+            </div>
+            <div class="form-group" ng-class="{ 'has-error' : tipebarangForm.statustipebarang.$invalid && !tipebarangForm.statustipebarang.$pristine }">
+              <label>Status Tipe Barang</label>
+              <div class="radio">
+                <label>
+                  <input type="radio" ng-model="statustipebarang" name="statustipebarang" id="optionsRadios1" value="aktif" required>
+                  Aktif
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" ng-model="statustipebarang" name="statustipebarang" id="optionsRadios2" value="tidak aktif" required>
+                  Tidak Aktif
+                </label>
+              </div>
+              <p ng-show="tipebarangForm.statustipebarang.$invalid && !tipebarangForm.statustipebarang.$pristine" class="help-block">Catatan Untuk Tipe Barang Tidak Boleh Kosong</p>
+            </div>
+            <button type="submit" ng-disabled="tipebarangForm.$invalid" class="btn btn-primary">Submit</button>
+          </div>  
+          </form>
+      </div>
+      <!-- /.col (left) -->
+    </div>
+  </section><!-- /.content -->
+  
+</div><!-- /.content-wrapper -->
+
+<div ng-include="'angular/partial/foottemplate.html'"></div>
