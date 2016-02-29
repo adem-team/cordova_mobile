@@ -1,0 +1,29 @@
+<div ng-include="'angular/partial/headtemplate.html'"></div>
+<div ng-include="'angular/partial/homemenu.html'"></div>
+<div class="content-wrapper">
+    <section class="content">
+      <div class="row">
+        <ul class="list-group">
+          <li class="list-group-item list-group-item-heading active" >Salesman Actions</li>
+          <li class="list-group-item list-group-item-heading" ng-click="takeapicture()">
+            <span class="badge danger">Do It!</span>Take Start Picture
+          </li>
+          <li class="list-group-item list-group-item-heading" ng-show="gambar">
+            <img id="myImage" >
+          </li>
+          <li class="list-group-item list-group-item-heading" style="cursor:pointer" ng-click="scanbarcode()">
+            <span class="badge danger">Do It!</span>Scan Barcode
+          </li>
+          <li class="list-group-item list-group-item-heading" style="cursor:pointer" ng-click="scanbarcode()">
+            <span class="badge danger">Do It!</span>Product Inventory
+          </li>
+          <li class="list-group-item list-group-item-heading" ng-click="takeapicture()">
+            <span class="badge danger">Do It!</span>Take End Picture
+          </li>
+          <li class="list-group-item list-group-item-heading" ng-show="gambar">
+            <img id="myImage" >
+          </li>
+        </ul>
+    </section>
+</div>
+<div ng-include="'angular/partial/foottemplate.html'"></div>

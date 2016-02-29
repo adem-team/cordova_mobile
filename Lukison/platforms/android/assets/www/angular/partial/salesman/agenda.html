@@ -1,0 +1,52 @@
+<div ng-include="'angular/partial/headtemplate.html'"></div>
+<div ng-include="'angular/partial/homemenu.html'"></div>
+
+<div class="content-wrapper">
+  <section class="content">
+    <div class="row">
+      <div ng-cloack class="tabsdemoStaticTabs">
+        <md-content class="md-padding">
+          <md-tabs md-dynamic-height md-border-bottom class="md-accent" >
+            <md-tab id="tab1">
+              <md-tab-label>LIST TODAY</md-tab-label>
+              <md-tab-body>
+                  <md-list>
+                    <md-list-item ng-repeat="customer in customers" ng-click="goToPerson(person.name, $event)">
+                        <img ng-src="asset/admin/dist/img/user2-160x160.jpg" class="md-avatar" />
+                        <p>
+                          <a href="#/detailcustomer/{{customer.CUST_KD}}">
+                            {{customer.CUST_NM}}
+                          </a>
+                        </p>
+                    </md-list-item>
+                  </md-list>   
+              </md-tab-body>
+            </md-tab>
+            
+            <md-tab id="tab2">
+              <md-tab-label>MAP</md-tab-label>
+              <md-tab-body>
+                  <ng-map zoom="17" center="{{lat}},{{long}}" style="display:block; width:100%; height:400px">
+                      <marker position="{{lat}}, {{long}}" on-click="toggleBounce()" animation="BOUNCE" draggable="false"></marker>
+
+                      <marker ng-repeat="customer in customers" position="{{customer.MAP_LAT}}, {{customer.MAP_LNG}}"  draggable="true" icon='http://google-maps-icons.googlecode.com/files/factory.png' 
+                      on-dragend="doSth(customer)"></marker>
+                  </ng-map>
+              </md-tab-body>
+            </md-tab>
+            <md-tab id="tab3">
+              <md-tab-label>ALL DAY LIST</md-tab-label>
+              <md-tab-body>
+                  <md-list>
+                  <div ui-calendar="uiConfig.calendar" class="span8 calendar" ng-model="eventSources"></div> 
+                  </md-list>   
+              </md-tab-body>
+            </md-tab>
+          </md-tabs>
+        </md-content>
+      </div>
+    </div>
+  </section><!-- /.content -->
+</div><!-- /.content-wrapper -->
+<div ng-include="'angular/partial/foottemplate.html'"></div>
+ 

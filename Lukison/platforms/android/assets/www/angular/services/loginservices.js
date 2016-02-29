@@ -1,22 +1,7 @@
 'use strict';
-myAppModule.run(["$rootScope", "$location", function ($rootScope, $location) 
-{
 
-    $rootScope.$on("$routeChangeSuccess", function (userInfo) 
-    {
-        // console.log(userInfo);
-    });
 
-    $rootScope.$on("$routeChangeError", function (event, current, previous, eventObj) 
-    {
-        if (eventObj.authenticated === false) 
-        {
-            $location.path("/login");
-        }
-    });
-}]);
-
-myAppModule.factory('authService', ["$http","$q","$window",function($http, $q, $window)
+myAppModule.factory('authService', ["$http","$q","$window","sweet",function($http, $q, $window,sweet)
 {
 	var userInfo;
 	var login = function(username,password)
@@ -48,14 +33,15 @@ myAppModule.factory('authService', ["$http","$q","$window",function($http, $q, $
 						{
 							accessToken: rtoken,
                     		username: rusername,
-                    		rulename:rulename
+                    		rulename:rulename,
+                            id:rid
                 		};
                 		$window.sessionStorage["userInfo"] = JSON.stringify(userInfo);
                 		deferred.resolve(userInfo);
 					}
                 else
                 {
-                    alert("You Have Invalid Credential");
+                    deferred.reject("error");
                 }
 			})
             .error(function()

@@ -7,14 +7,13 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form ng-submit="login(user)" validate>
-      <div class="form-group has-feedback">
-        <input type="text" ng-model="user.username" class="form-control" placeholder="Email" required>
-        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+    <form name="loginForm" ng-submit="login(user)" validate>
+      <div class="form-group has-feedback" ng-class="{'has-error':loginForm.username.$invalid && !loginForm.username.$pristine,'has-success':loginForm.username.$valid}">
+        <input type="text" name="username" ng-disabled="disableInput" ng-focus="focususername" ng-model="user.username" class="form-control" placeholder="Username" required>
       </div>
-      <div class="form-group has-feedback">
-        <input type="password" ng-model="user.password" class="form-control" placeholder="Password" required>
-        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      <div class="form-group has-feedback" ng-class="{'has-error':loginForm.password.$invalid && !loginForm.password.$pristine,'has-success':loginForm.password.$valid}">
+        <input type="password" name="password" ng-disabled="disableInput" ng-model="user.password" class="form-control" placeholder="Password" required>
+        <span class="form-control-feedback"></span>
       </div>
       <div class="row">
         <div class="col-xs-8">
@@ -26,7 +25,7 @@
         </div>
         <!-- /.col -->
         <div class="col-xs-4">
-          <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <button type="submit" ladda="loginLoading" ng-disabled="loginForm.$invalid" class="btn btn-primary btn-block btn-flat">Sign In</button>
         </div>
         <!-- /.col -->
       </div>

@@ -1,107 +1,104 @@
-
 <!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="myAppModule">
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Log in</title>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>PT. LUKISON GROUP</title>
 
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <link rel="stylesheet" href="asset/admin/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="asset/admin/bootstrap/font-awesome/css/font-awesome.css">
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <link rel="stylesheet" href="asset/admin/dist/css/AdminLTE.min.css">
-  <link rel="stylesheet" href="asset/admin/dist/css/skins/_all-skins.min.css">
-  <link rel="stylesheet" href="asset/admin/plugins/iCheck/square/blue.css">
-  <link rel="stylesheet" href="asset/admin/plugins/select2/select2.min.css">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no,minimal-ui" name="viewport">
+    <!--   	<link rel="stylesheet" href="asset/admin/bootstrap/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="asset/admin/bootstrap/font-awesome/css/font-awesome.css">
+  	
+  	<link rel="stylesheet" href="asset/admin/dist/css/AdminLTE.min.css">
+  	<link rel="stylesheet" href="asset/admin/dist/css/skins/_all-skins.min.css">
+ -->
+    <link rel="stylesheet" href="asset/admin/plugins/iCheck/square/blue.css">
+    <link rel="stylesheet" href="asset/notables.css">
+    <link rel="stylesheet" href="asset/map.css">
+    <link href="angular/vendor/angular-animate.css" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="asset/admin/plugins/select2/select2.min.css"> -->
+    <link rel="stylesheet" href="bower_components/select2/select2.css">
+    <link rel="stylesheet" href="bower_components/select2/select2-bootstrap.css">
+
+    <link rel="stylesheet" href="bower_components/ngToast/dist/ngToast.css">
+    <link rel="stylesheet" href="bower_components/ngToast/dist/ngToast-animations.css">
+    <link rel="stylesheet" href="bower_components/ng-material-floating-button/mfb/dist/mfb.css">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+    <link rel="stylesheet" href="bower_components/sweetalert/dist/sweetalert.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="bower_components/ladda/dist/ladda-themeless.min.css">
+
+    <link rel="stylesheet" href="bower_components/fullcalendar/dist/fullcalendar.css"/>
+
+    <link href="asset/css/bootstrap.css" rel="stylesheet">
+    <link href="asset/css/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="asset/css/activeform.css" rel="stylesheet">
+    <link href="asset/css/AdminLTE.min.css" rel="stylesheet">
+    <link href="asset/css/_all-skins.min.css" rel="stylesheet">
+    <link href="asset/css/bootstrap.min.css" rel="stylesheet">
+    <link href="asset/css/dropdown-x.css" rel="stylesheet">
+    <link href="asset/css/sidenav.css" rel="stylesheet">
+    <script src="asset/js/jquery.js"></script>
+    <script src="asset/js/bootstrap.js"></script>
+
 </head>
-<body class="skin-blue login-page">
-<div class="wrapper">
-  <div ng-view> 
 
-  </div>
-</div>
+<body class="login-page sidebar-mini" off-canvas-menu ng-class="{'sidebar-collapse sidebar-open':isMenuOpen}">
+        <div class="wrapper skin-blue">
+            <toast></toast>
+            <div ng-view></div>
+            <!-- <nav mfb-menu position="br" effect="zoomin" active-icon="ion-navicon-round" resting-icon="ion-plus-round" toggling-method="hover">
+              <button mfb-button icon="ion-social-freebsd-devil" label="Add"></button>
+              <button mfb-button icon="ion-social-usd" label="Remove"></button>
+              <button mfb-button icon="ion-android-mail" label="Edit"></button>
+            </nav> -->
+        <div>
+        <script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="angular/vendor/angular.js"></script>
+        <script src="angular/scripts/vendor.js"></script>
+        <script src="bower_components/moment/moment.js"></script>
 
-<script src="asset/admin/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="bower_components/angular-ui-calendar/src/calendar.js">
+        </script>
+        <script type="text/javascript" src="bower_components/fullcalendar/dist/fullcalendar.min.js">
+        </script>
+        <script type="text/javascript" src="bower_components/fullcalendar/dist/gcal.js"></script>
 
-<script>
-  // var $i = jQuery.noConflict();
-  // alert($i.fn.jquery);
-</script> 
+        
+        
 
-<script src="asset/admin/bootstrap/js/bootstrap.min.js"></script>
+        <script src="angular/modules/myapp.js"></script>
+        <script src="angular/services/loginservices.js"></script>
+        <script src="angular/services/apiservices.js"></script>
+        <script src="angular/services/singleapiservices.js"></script>
+        <script src="angular/services/cameraservice.js"></script>
+        <script src="angular/services/regionalServices.js"></script>
 
-<script src="angular/vendor/angular.js"></script>
-<script src="angular/vendor/angular-route.min.js"></script>
-
-
-<script src="angular/vendor/fusioncharts.js"></script>
-<script src="angular/vendor/angular-fusioncharts.min.js"></script>
-<script src="angular/vendor/upload-base64.js"></script>
-<script src="angular/vendor/ui-bootstrap.js"></script>
-
-
-<script src="angular/modules/myapp.js"></script>
-<script src="angular/services/loginservices.js"></script>
-<script src="angular/vendor/spin.js"></script>
-<script src="angular/vendor/angular-spinner.js"></script>
-<script src="angular/vendor/angular-strap.js"></script>
-<!-- <script src="angular/vendor/angular-qr.js"></script> -->
-<script src="angular/vendor/qrcode.js"></script>
-<script src="angular/vendor/angular-qrcode.js"></script>
-<script src="angular/vendor/ng-angular.js"></script>
-<script src="cordova.js"></script>
-
-
-
-<script src="angular/routing/loginrouting.js"></script>
-<script src="angular/routing/errorrouting.js"></script>
-<script src="angular/routing/erp/home/homerouting.js"></script>
+        <!-- <script src="angular/vendor/cordova.js"></script> -->
+        <script src="angular/routing/loginrouting.js"></script>
+        <script src="angular/routing/errorrouting.js"></script>
+        <script src="angular/routing/salesrouting.js"></script>
 
 
-
-<script src="angular/routing/erp/masterbarang/masterbarangeditrouting.js"></script>
-<script src="angular/routing/erp/masterbarang/masterbarangnewrouting.js"></script>
-<script src="angular/routing/erp/masterbarang/masterbarangdeleterouting.js"></script>
-<script src="angular/routing/erp/masterbarang/masterbaranglistrouting.js"></script>
-<script src="angular/routing/erp/masterbarang/masterbarangnewrouting.js"></script>
-<script src="angular/routing/erp/masterbarang/masterbarangdetailrouting.js"></script>
+        <script src="angular/controller/logincontroller.js"></script>
+        <script src="angular/controller/errorcontroller.js"></script>
 
 
+        <script src="cordova.js"></script>
+        <script src="angular/directives/offcanvas.js"></script>
+        <script src="angular/filter/roundup.js"></script>
 
-<script src="angular/routing/erp/order/requestorderrouting.js"></script>
-<script src="angular/routing/erp/order/purchaseorderrouting.js"></script>
-<script src="angular/routing/erp/order/salesorderrouting.js"></script>
-
-<script src="angular/routing/erp/widget/beritaacara/beritaacararouting.js"></script>
-<script src="angular/routing/erp/widget/memo/memorouting.js"></script>
-<script src="angular/routing/erp/widget/notulen/notulenrouting.js"></script>
-
-<script src="angular/routing/erp/chart/chartrouting.js"></script>
-
-<script src="angular/controller/logincontroller.js"></script>
-<script src="angular/controller/errorcontroller.js"></script>
-<script src="angular/controller/erp/home/homecontroller.js"></script>
-
-<script src="angular/controller/erp/masterbarang/masterbarangeditcontroller.js"></script>
-<script src="angular/controller/erp/masterbarang/masterbarangdeletecontroller.js"></script>
-<script src="angular/controller/erp/masterbarang/masterbaranglistcontroller.js"></script>
-<script src="angular/controller/erp/masterbarang/masterbarangnewcontroller.js"></script>
-<script src="angular/controller/erp/masterbarang/masterbarangdetailcontroller.js"></script>
+        <script src="angular/controller/salesman/mapcontroller.js"></script>
+        <script src="angular/controller/salesman/visitcontroller.js"></script>
+        <script src="angular/controller/salesman/newcustomercontroller.js"></script>
+        <script src="angular/controller/salesman/customercontroller.js"></script>
+        <script src="angular/controller/salesman/homecontroller.js"></script>
+        <script src="angular/controller/salesman/agendacontroller.js"></script>
+        <script src="angular/controller/salesman/historycontroller.js"></script>
 
 
-<script src="angular/controller/erp/order/requestordercontroller.js"></script>
-<script src="angular/controller/erp/order/purchaseordercontroller.js"></script>
-<script src="angular/controller/erp/order/salesordercontroller.js"></script>
-
-<script src="angular/controller/erp/widget/beritaacara/beritaacaracontroller.js"></script>
-<script src="angular/controller/erp/widget/memo/memocontroller.js"></script>
-<script src="angular/controller/erp/widget/notulen/notulencontroller.js"></script>
-
-<script src="angular/controller/erp/chart/chartcontroller.js"></script>
-
-
-
+        
 </body>
 </html>

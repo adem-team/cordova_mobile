@@ -1,0 +1,23 @@
+
+<div ng-include="'angular/partial/headtemplate.html'"></div>
+<div ng-include="'angular/partial/homemenu.html'"></div>
+<div class="content-wrapper">
+    <section class="content">
+        <div class="row">
+          <div class="col-md-12 col-sm-6 col-xs-12" >
+            <ng-map zoom="19" center="{{lat}},{{long}}" style="display:block; width:100%; height:700px">
+                <marker position="{{lat}}, {{long}}"  draggable="false"></marker>
+
+                <marker ng-repeat="customer in customers" position="{{customer.MAP_LAT}}, {{customer.MAP_LNG}}"  draggable="true" icon='http://google-maps-icons.googlecode.com/files/factory.png' 
+                on-dragend="doSth(customer)"></marker>
+            </ng-map>
+          </div>
+        </div>
+    </section>
+    <nav mfb-menu position="br" effect="zoomin" active-icon="ion-navicon-round" resting-icon="ion-plus-round" toggling-method="hover">
+              <button mfb-button icon="ion-social-freebsd-devil" label="Add"></button>
+              <button mfb-button icon="ion-social-usd" label="Remove"></button>
+              <button mfb-button icon="ion-android-mail" label="Edit"></button>
+    </nav>
+</div>
+<div ng-include="'angular/partial/foottemplate.html'"></div>

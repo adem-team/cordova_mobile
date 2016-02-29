@@ -1,8 +1,6 @@
 'use strict';
 myAppModule.controller("Error404Controller", ["$scope", "$location","$http","$window", function ($scope, $location, $http,$window) 
 {
-;
-
     $scope.logout = function () 
     { 
         $scope.userInfo = null;
@@ -13,8 +11,6 @@ myAppModule.controller("Error404Controller", ["$scope", "$location","$http","$wi
 
 myAppModule.controller("Error500Controller", ["$scope", "$location","$http","$window", function ($scope, $location, $http,$window) 
 {
-;
-
     $scope.logout = function () 
     { 
         $scope.userInfo = null;

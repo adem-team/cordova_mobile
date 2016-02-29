@@ -1,0 +1,200 @@
+<div ng-include="'angular/partial/headtemplate.html'"></div>
+<div ng-include="'angular/partial/homemenu.html'"></div>
+
+<div class="content-wrapper">
+  <section class="content">
+    <div class="row">
+        <div class="col-md-12 col-sm-6 col-xs-12" >
+            <div class="info-box bg-green">
+              <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
+              <div class="info-box-content">
+                <span class="info-box-text" style="cursor:pointer" ng-click="newcustomer()"><h1>NEW CUSTOMER</h1></span>
+              </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="box box-danger" style="margin:12px;box-shadow:0 3px 25px black;">
+          <div class="box-header">
+            <h3 class="box-title">Create New Customer</h3>
+          </div>
+          <form name="customerForm" ng-submit="submitForm(customer)" method="post" novalidate>
+          <div class="box-body" >
+            <fieldset class="scheduler-border">
+              <legend class="scheduler-border">Customer Identity</legend>
+              <div class="form-group"  ng-class="{ 'has-error' : customerForm.CUST_NM.$invalid && !customerForm.CUST_NM.$pristine,'has-success':customerForm.CUST_NM.$valid  }">
+              <label>Nama Customer</label>
+                <input type="text" name="CUST_NM" class="form-control" ng-model="customer.CUST_NM" required>
+                <p ng-show="customerForm.CUST_NM.$invalid && !customerForm.CUST_NM.$pristine" class="help-block">Nama Customer Tidak Boleh Kosong.</p>
+              </div>
+              
+              <div class="form-group"  ng-class="{ 'has-error' : customerForm.TLP1.$invalid && !customerForm.TLP1.$pristine,'has-success':customerForm.TLP1.$valid  }">
+              <label>Customer Telpon Number</label>
+                <input type="number" name="TLP1" class="form-control" ng-model="customer.TLP1" required>
+                <p ng-show="customerForm.TLP1.$invalid && !customerForm.TLP1.$pristine" class="help-block">No.Telepon Tidak Boleh Kosong.</p>
+              </div>
+              <div class="form-group"  ng-class="{ 'has-error' : customerForm.email.$invalid && !customerForm.email.$pristine,'has-success':customerForm.email.$valid  }">
+                <label>Customer Email</label>
+                  <input type="email" name="email" class="form-control" ng-model="customer.email" required>
+                  <p ng-show="customerForm.email.$invalid && !customerForm.email.$pristine" class="help-block">Email Tidak Boleh Kosong.</p>
+              </div>
+              <div class="form-group"  ng-class="{ 'has-error' : customerForm.NPWP.$invalid && !customerForm.NPWP.$pristine,'has-success':customerForm.NPWP.$valid  }">
+                <label>Customer NPWP</label>
+                  <input type="text" name="NPWP" class="form-control" ng-model="customer.NPWP" required>
+                  <p ng-show="customerForm.email.$invalid && !customerForm.NPWP.$pristine" class="help-block">NPWP Tidak Boleh Kosong.</p>
+              </div>
+              <div class="form-group" ng-class="{ 'has-error' : customerForm.STT_TOKO.$invalid && !customerForm.STT_TOKO.$pristine,'has-success':customerForm.STT_TOKO.$valid }">
+              <label>Status Kategori</label>
+              <div class="radio">
+                <label>
+                  <input type="radio" ng-model="customer.STT_TOKO" name="STT_TOKO" id="optionsRadios1" value="1" required>
+                  Aktif
+                </label>
+              </div>
+              <div class="radio">
+                <label>
+                  <input type="radio" ng-model="customer.STT_TOKO" name="STT_TOKO" id="optionsRadios2" value="0" required>
+                  Tidak Aktif
+                </label>
+              </div>
+            </div>
+            </fieldset>
+            <fieldset class="scheduler-border">
+              <legend class="scheduler-border">Customer Address</legend>
+                <div class="form-group" ng-class="{'has-error':customerForm.PROVINCE_ID.$invalid && !customerForm.PROVINCE_ID.$pritine,'has-success':customerForm.PROVINCE_ID.$valid}">
+                  <label>Customer Province</label>
+                  <select class="form-control" ui-select2="select2Options" name="PROVINCE_ID" style="width: 100%;" data-allow-clear="true" ng-model="customer.PROVINCE_ID" ng-change="provinsichange()" ng-required="true">
+                    <option value=""></option>
+                    <option ng-repeat="provinsi in provinsis" value="{{provinsi.PROVINCE_ID}}">
+                      {{provinsi.PROVINCE}}
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group" ng-show="showkabupaten" ng-class="{'has-error':customerForm.CITY_ID.$invalid && !customerForm.CITY_ID.$pritine,'has-success':customerForm.CITY_ID.$valid}">
+                  <label>Customer Kabupaten</label>
+                  <select class="form-control" data-allow-clear="true" ui-select2="select2Options" name="CITY_ID" style="width: 100%;" ng-model="customer.CITY_ID" ng-required="true" ng-change="kabupatenchange()">
+                    <option value=""></option>
+                    <option ng-repeat="kabupaten in kabupatens|filter:{PROVINCE_ID:filterprovinsi}:true" value="{{kabupaten.CITY_ID}}">
+                      {{kabupaten.CITY_NAME}}
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group" ng-show="showkecamatan" ng-class="{'has-error':customerForm.kecamatan.$invalid && !customerForm.kecamatan.$pritine,'has-success':customerForm.kecamatan.$valid}">
+                  <label>Customer kecamatan</label>
+                  <select class="form-control" ui-select2="select2Options" name="kecamatan" style="width: 100%;" ng-model="customer.kecamatan" ng-change="kodeposchange" ng-required="true">
+                    <option value=""></option>
+                    <option ng-repeat="kecamatan in kecamatans" value="{{kecamatan.id_kecamatan}}">
+                      {{kecamatan.kecamatan}}
+                    </option>
+                  </select>
+                </div>
+
+                <div class="form-group" ng-show="showkodepos" ng-class="{'has-error':customerForm.POSTAL_CODE.$invalid && !customerForm.POSTAL_CODE.$pritine,'has-success':customerForm.POSTAL_CODE.$valid}">
+                  <label>Customer Kode Pos</label>
+                  <select class="form-control" ui-select2="select2Options" name="POSTAL_CODE" style="width: 100%;" ng-model="customer.POSTAL_CODE" ng-change="kodeposchange()"ng-required="true">
+                    <option value=""></option>
+                    <option ng-repeat="kabupaten in kabupatens|filter:{PROVINCE_ID:filterprovinsi}:true" value="{{kabupaten.POSTAL_CODE}}">
+                      {{kabupaten.POSTAL_CODE}}
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group"  ng-show="showalamat" ng-class="{ 'has-error' : customerForm.ALAMAT.$invalid && !customerForm.ALAMAT.$pristine,'has-success':customerForm.ALAMAT.$valid  }">
+                <label>Customer Street</label>
+                  <input type="text" name="ALAMAT" class="form-control" ng-model="customer.ALAMAT" required>
+                  <p ng-show="customerForm.ALAMAT.$invalid && !customerForm.ALAMAT.$pristine" class="help-block">Street Tidak Boleh Kosong.</p>
+              </div>
+            </fieldset>
+            <fieldset class="scheduler-border">
+              <legend class="scheduler-border">DISTRIBUTORS</legend>
+                  <div class="form-group" ng-class="{'has-error':customerForm.KD_DISTRIBUTOR.$invalid && !customerForm.KD_DISTRIBUTOR.$pritine,'has-success':customerForm.KD_DISTRIBUTOR.$valid}">
+                <label>List Distributor</label>
+                  <select class="form-control" ui-select2="select2Options" name="KD_DISTRIBUTOR" style="width: 100%;" ng-model="customer.KD_DISTRIBUTOR" ng-required="true">
+                      <option value=""></option>
+                      <option ng-repeat="distributor in distributors" value="{{distributor.KD_DISTRIBUTOR}}">{{distributor.KD_DISTRIBUTOR}}</option>
+                    </select>
+                  <p ng-show="customerForm.KD_DISTRIBUTOR.$invalid && !customerForm.KD_DISTRIBUTOR.$pristine" class="help-block">Customer Distributor Tidak Boleh Kosong.</p>
+                </div>
+            </fieldset>
+
+            <fieldset class="scheduler-border">
+              <legend class="scheduler-border">Category</legend>
+                <div class="form-group" ng-class="{'has-error':customerForm.CUST_KTG_PARENT.$invalid && !customerForm.CUST_KTG_PARENT.$pritine,'has-success':customerForm.CUST_KTG_PARENT.$valid}">
+                <label>Customer Kategori</label>
+                  <select class="form-control" ui-select2="select2Options" name="CUST_KTG_PARENT" style="width: 100%;" ng-model="customer.CUST_KTG_PARENT"  ng-change="groupparentchange()" ng-required="true" data-allow-clear="true">
+                      <option value=""></option>
+                      <option ng-repeat="custkat in customerkategoris|filter:{CUST_KTG_PARENT:0}" value="{{custkat.CUST_KTG}}">{{custkat.CUST_KTG_NM}}</option>
+                    </select>
+                  <p ng-show="customerForm.CUST_KTG_PARENT.$invalid && !customerForm.CUST_KTG_PARENT.$pristine" class="help-block">Customer Group Tidak Boleh Kosong.</p>
+                </div>
+                
+                <div class="form-group"  ng-show="tena" ng-class="{ 'has-error' : customerForm.CUST_KTG.$invalid && !customerForm.CUST_KTG.$pristine,'has-success':customerForm.CUST_KTG.$valid  }">
+                <label>Customer Kategori</label>
+                  <select class="form-control" ui-select2="select2Options" name="CUST_KTG" style="width: 100%;" ng-model="customer.CUST_KTG"  data-allow-clear="true" ng-required="true">
+                      <option value=""></option>
+                      <option ng-repeat="custkat in childcustomerkategoris" value="{{custkat.CUST_KTG}}">{{custkat.CUST_KTG_NM}}</option>
+                      <!-- <option ng-repeat="custkat in childcustomerkategoris|filter:{CUST_KTG_PARENT: '!' + 0,CUST_KTG_PARENT:filtergroupcust}" value="{{custkat.CUST_KTG}}">{{custkat.CUST_KTG_NM}}</option> -->
+                    </select>
+                  <p ng-show="customerForm.CUST_KTG.$invalid && !customerForm.CUST_KTG.$pristine" class="help-block">Customer Group Tidak Boleh Kosong.</p>
+                </div>
+            </fieldset>
+            <fieldset class="scheduler-border">
+              <legend class="scheduler-border">Barcode</legend>
+              <div class="form-group">
+              
+                <div class="row">
+                  <div class="col-lg-4" data-ng-app="monospaced.qrcode" data-ng-init="foo='';bar='http://localhost/angular-qrcode-master/dist/angular-qrcode';v=4;e='M';s=200;"> 
+                    <qrcode version="{{v}}" error-correction-level="{{e}}" size="{{s}}" data="{{foo}}">
+                    </qrcode>
+                  </div>
+                  <div>
+                <div class="col-lg-8">
+                  <p class="form-group" ng-class="{'has-error':customerForm.foo.$invalid && !customerForm.foo.$pritine,'has-success':customerForm.foo.$valid}">
+                    <label for="data">Data</label>
+                    <textarea class="form-control" id="data" name="foo" data-ng-model="foo" maxlength="2953" required></textarea>
+                  </p>
+                  <p class="form-group">
+                    <label for="size">Size</label>
+                    <input class="form-control" id="size" type="number" min="100" max="200" data-ng-model="s">
+                  </p>
+                  <p class="form-group">
+                    <label for="version">Version</label>
+                    <input class="form-control" id="version" type="number" data-ng-model="v" min="1" max="10">
+                  </p>
+                  <p class="form-group">
+                    <label for="level" title="Error Correction Level">Level</label>
+                    <select class="form-control" id="level" data-ng-model="e" data-ng-options="option.version as option.name for option in [{name:'Low', version:'L'},{name:'Medium', version:'M'},{name:'Quartile', version:'Q'},{name:'High', version:'H'}]"></select>
+                  </p>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="form-group" ng-class="{'has-error':customerForm.date.$invalid && !customerForm.date.$pritine,'has-success':customerForm.date.$valid}">
+              <label>Tanggal Masuk</label>
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <i class="fa fa-minus"></i>
+                </div>
+                <input type="date" name="date" class="form-control" uib-datepicker-popup ng-model="customer.JOIN_DATE" is-open="status.opened" min-date="minDate" max-date="maxDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+                <div class="input-group-addon">
+                  <i class="fa fa-plus"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer clearfix">
+            <a href="javascript::;" class="btn btn-sm btn-danger btn-flat pull-left">Cancel</a>
+            <button type="submit" ng-disabled="customerForm.$invalid" class="btn btn-sm btn-success btn-flat pull-right">Submit</button>
+          </div>
+        </div>
+      </form>
+        <!-- /.box -->
+      </div>
+      <!-- /.col (left) -->
+    </div>
+  </section><!-- /.content -->
+</div><!-- /.content-wrapper -->
+<div ng-include="'angular/partial/foottemplate.html'"></div>
+ 
